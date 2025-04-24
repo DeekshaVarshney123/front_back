@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index route</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Quora post</h1>
+    <%for(let post of posts){%>
+        <div class="post">
+         <p>@<%=post.username%></p>
+         <p><%=post.content%></p>
+         <a href="https://jubilant-goldfish-x59jqg9qv6q43pvvv-8080.app.github.dev/post/<%=post.id%>">see in detail</a>
+         <a href="https://jubilant-goldfish-x59jqg9qv6q43pvvv-8080.app.github.dev/post/<%=post.id%>/edit">edit</a>
+         <form method="post" action="/post/<%=post.id%>?_method=DELETE">
+            <button>delete</button>
+         </form>
+        </div>
+    <%}%>
+    <a href="https://jubilant-goldfish-x59jqg9qv6q43pvvv-8080.app.github.dev/post/new">add new post</a>
+</body>
+</html>
